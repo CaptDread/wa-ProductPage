@@ -1,0 +1,367 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset ================================= */
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+/* 1. Main Layout ================================= */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #2e3032;
+}
+
+/* 2. Content ================================= */
+.headbar {
+	width: 100vw;
+	height: 7%;
+	padding: 0em 4.2%;
+	background: linear-gradient(-45deg, #eee, #f23bfc, #eee);
+	background-size: 400% 400%;
+	-webkit-animation: infiniteGradient 66.6s infinite both linear;
+	        animation: infiniteGradient 66.6s infinite both linear;
+	border-bottom: 0.42em rgba(242, 59, 252, 0.433) solid;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+	position: fixed;
+}
+.headbar .headbar_heading {
+	font-size: 42px;
+	text-transform: capitalize;
+	color: #eee;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.headbar .headbar_heading .headbar_heading-span {
+	font-size: 0.3em;
+	position: relative;
+	top: 25%;
+	left: -55%;
+	text-transform: none;
+}
+.headbar .headbar_burger {
+	width: 10%;
+	display: -webkit-flex;
+	display: flex;
+}
+.headbar .headbar_burger .burger_label {
+	-webkit-align-items: center;
+	        align-items: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	width: 100%;
+	height: 100%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	gap: 13%;
+	cursor: pointer;
+}
+.headbar .headbar_burger .burger_label div {
+	width: 45px;
+	height: 10px;
+	background: linear-gradient(75deg, #eee, #f23bfc);
+	background-size: 400% 400%;
+	-webkit-animation: infiniteGradient 66.6s infinite both linear;
+	        animation: infiniteGradient 66.6s infinite both linear;
+	-webkit-transform: none;
+	        transform: none;
+	transition: -webkit-transform 420ms linear;
+	transition: transform 420ms linear;
+	transition: transform 420ms linear, -webkit-transform 420ms linear;
+	border-radius: 25%;
+	-webkit-transform-origin: 20% 50%;
+	        transform-origin: 20% 50%;
+}
+.headbar .burger_nav {
+	position: absolute;
+	top: -19.9%;
+	right: 0%;
+	display: none;
+	-webkit-transform: translateY(0%);
+	        transform: translateY(0%);
+	background: linear-gradient(75deg, #eee, #999);
+	background-size: 400% 400%;
+	-webkit-animation: infiniteGradient 66.6s infinite both linear;
+	        animation: infiniteGradient 66.6s infinite both linear;
+	transition: -webkit-transform 420ms ease-in-out;
+	transition: transform 420ms ease-in-out;
+	transition: transform 420ms ease-in-out, -webkit-transform 420ms ease-in-out;
+}
+.headbar .burger_nav ul {
+	width: -webkit-max-content;
+	width: max-content;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-column-gap: 1%;
+	        column-gap: 1%;
+}
+.headbar .burger_nav ul li {
+	width: -webkit-max-content;
+	width: max-content;
+	height: -webkit-max-content;
+	height: max-content;
+	margin: 1em 0em;
+	text-align: center;
+}
+.headbar .burger_nav ul li a {
+	text-decoration: none;
+	text-transform: capitalize;
+	padding: 1em 2em;
+	color: #000;
+}
+.headbar .burger_nav ul li a:hover {
+	background: linear-gradient(-45deg, violet, purple);
+	background-size: 400% 400%;
+	-webkit-animation: infiniteGradient 66.6s infinite both linear;
+	        animation: infiniteGradient 66.6s infinite both linear;
+	color: #eee;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.headbar input[type=checkbox]:checked + label .topbun {
+	-webkit-transform: rotateZ(45deg);
+	        transform: rotateZ(45deg);
+}
+.headbar input[type=checkbox]:checked + label .bottombun {
+	-webkit-transform: rotateZ(-45deg);
+	        transform: rotateZ(-45deg);
+}
+.headbar input[type=checkbox]:checked + label .burger_nav {
+	display: block;
+	-webkit-transform: translateY(40%);
+	        transform: translateY(40%);
+	transition: -webkit-transform 420ms ease-in-out 42ms;
+	transition: transform 420ms ease-in-out 42ms;
+	transition: transform 420ms ease-in-out 42ms, -webkit-transform 420ms ease-in-out 42ms;
+}
+
+.hero_landing {
+	width: 96.5vw;
+	height: 60vh;
+	background: linear-gradient(-45deg, #8a7f83, rgba(100, 67, 102, 0.57), #8a7f83);
+	background-size: 400% 400%;
+}
+
+.desc1, .desc3 {
+	background: linear-gradient(45deg, #000, rgba(100, 67, 102, 0.57), #000);
+}
+
+.desc2 {
+	background: linear-gradient(-45deg, #eee, rgba(100, 67, 102, 0.57), #999);
+}
+
+.product_desc {
+	width: 96.5vw;
+	height: 60vh;
+	background-size: 400% 400%;
+	color: #eee;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.hero_landing {
+	color: #eee;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.footer {
+	width: 96.5vw;
+	height: 7vh;
+	background: linear-gradient(75deg, #eee, #f4c6f7, #eee);
+	background-size: 400% 400%;
+	-webkit-animation: infiniteGradient 66.6s infinite both linear;
+	        animation: infiniteGradient 66.6s infinite both linear;
+	border-top: 0.42em rgba(242, 59, 252, 0.433) solid;
+	padding: 0em 10%;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+}
+
+@-webkit-keyframes infiniteGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	25% {
+		background-position: 100% 50%;
+	}
+	50% {
+		background-position: 0% 25%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes infiniteGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	25% {
+		background-position: 100% 50%;
+	}
+	50% {
+		background-position: 0% 25%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+/*# sourceMappingURL=main.css.map */
