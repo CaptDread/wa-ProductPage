@@ -34,8 +34,54 @@
 				</label>
 			</div>
 		</section>
-		<section class="hero_landing">Kit preview section</section> <!-- this part will have each package rotating through the hero on a carousel. -->
-		<section class="product_desc desc1">Kit switch section</section> <!-- this part will have a way to switch between diferent kits, with a minimalistic van png, each package adds another solar panel to the van roof. -->
+		<section class="hero_landing">
+			<div class="van_build">
+				<div class="van_build-imgs">
+					<img src="/src/img/vanEmpty.png" alt="Get some power on that rig!" class="van_build-img van_build-empty" id="active_build">
+					<img src="/src/img/van1.png" alt="Package 1" class="van_build-img van_build-1">
+					<img src="/src/img/van2.png" alt="Package 2" class="van_build-img van_build-2">
+					<img src="/src/img/van3.png" alt="Package 3" class="van_build-img van_build-3">
+				</div>
+			</div>
+			<div class="packages">
+				<div class="package_btns">
+					<div class="package">
+						<label for="package1">
+							<img src="/src/img/package1.webp" alt="" class="package_img">
+						</label>
+						<input type="radio" name="package" id="package1" class="package_btn">
+					</div>
+					<div class="package">
+						<label for="package2">
+							<img src="/src/img/package2.webp" alt="" class="package_img">
+						</label>
+						<input type="radio" name="package" id="package2" class="package_btn">
+					</div>
+					<div class="package">
+						<label for="package3">
+							<img src="/src/img/package3.webp" alt="" class="package_img">
+						</label>
+						<input type="radio" name="package" id="package3" class="package_btn">
+					</div>
+				</div>
+			</div>
+		</section> <!-- this part will have a way to switch between diferent kits, with a minimalistic van png, each package adds another solar panel to the van roof.  -->
+		<section class="product_desc desc1">
+			<div class="info_wheel-container">
+				<div class="info_wheel-bar bar1">
+					<div class="info_wheel-item">1</div>
+					<div class="info_wheel-bar bar2">
+						<div class="info_wheel-item">2</div>
+						<div class="info_wheel-bar bar2">
+							<div class="info_wheel-item">3</div>
+							<div class="info_wheel-item">4</div>
+						</div>
+						<div class="info_wheel-item">5</div>
+					</div>
+					<div class="info_wheel-item">6</div>
+				</div>
+			</div>
+		</section> <!-- this part will have all the items in the current package displayed in circles constantly rotating until the mouse enters the area, when a product in the circle gets hovered on the info about it appears in the center.-->
 		<section class="product_desc desc2">Kit usages</section> <!-- this part will have each package's usage items, set up in a circle showing all that the current package is able to power. -->
 		<section class="product_desc desc3">kit addons to consider</section> <!-- this part will have extra optional add-ons set up on a carousel, with info and the like for each item.-->
 		<footer class="footer"></footer>

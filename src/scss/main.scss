@@ -41,13 +41,14 @@ body {
 	width: 100vw;
 	height: 7%;
 	padding: 0em 4.2%;
-	background: linear-gradient(-45deg, #eee, rgb(242, 59, 252), #eee);
+	background: linear-gradient(-45deg, #eee, #fff);
 	background-size: 400% 400%;
 	animation: infiniteGradient 66.6s infinite both linear;
-	border-bottom: .42em rgba(242, 59, 252, 0.433) solid;
+	border-bottom: .42em gold solid;
 	display: flex;
 	justify-content: space-between;
 	position: fixed;
+	z-index: 2;
 
 	.headbar_heading{
 		font-size: 42px;
@@ -81,13 +82,13 @@ body {
 			div{
 				width: 45px;
 				height: 10px;
-				background: linear-gradient(75deg, #eee, rgb(242, 59, 252));
+				background: linear-gradient(75deg, #000, #000, purple);
 				background-size: 400% 400%;
 				animation: infiniteGradient 66.6s infinite both linear;
-				// border: .013em #000 solid;
+				border: 2px #000 solid;
 				transform: none;
 				transition: transform 420ms linear;
-				border-radius: 25%;
+				border-radius: 36%;
 				transform-origin: 20% 50%;
 			}
 		}
@@ -102,6 +103,7 @@ body {
 		background-size: 400% 400%;
 		animation: infiniteGradient 66.6s infinite both linear;
 		transition: transform 420ms ease-in-out;
+		z-index: 2;
 
 		ul{
 			width: max-content;
@@ -123,7 +125,7 @@ body {
 				}
 
 				a:hover{
-					background: linear-gradient(-45deg, violet, purple);
+					background: linear-gradient(-45deg, gold, goldenrod);
 					background-size: 400% 400%;
 					animation: infiniteGradient 66.6s infinite both linear;
 					color: #eee;
@@ -149,16 +151,141 @@ body {
 }
 
 .hero_landing{
-	width: 96.5vw;
-	height: 60vh;
-	background: linear-gradient(-45deg, #8a7f83, rgba(100, 67, 102, 0.57), #8a7f83);
+	width: 100%;
+	height: 60%;
+	background: linear-gradient(-45deg, #333, #000, #666);
 	background-size: 400% 400%;
-	// animation: infiniteGradient 13s ease both infinite;
+	animation: infiniteGradient 13s ease both infinite;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+
+	.van_build{
+		grid-column: 1 / 8;
+		
+		.van_build-imgs{
+			display: flex;
+			width: 100%;
+			height: 100%;
+			
+			img{
+				width: 160%;
+				position: relative;
+				top: -100vh;
+				display: none;
+			}
+			#active_build{
+				top: 0%;
+				margin-top: auto;
+				display: block;
+				left: -20%;
+			}
+		}
+	}
+	.packages{
+		grid-column: 9 / 13;
+		padding: 50% 0em;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		.package_btns{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+			overflow: hidden;
+
+			.package{
+				height: 30%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #8a7f83;
+				border-left: .42em gold solid;
+				overflow: hidden;
+				transform: translate(95%);
+				transition: transform 130ms linear;
+
+
+				label{
+					display: flex;
+					justify-content: center;
+
+					.package_img{
+						width: 60%;
+						height: 60%;
+						border-radius: 100%;
+						overflow: hidden;
+						border: .42em #fff solid;
+					}
+				}
+				.package_btn{
+					display: none;
+				}
+			}
+
+			.package:hover{
+				transform: translate(0%);
+				transition: transform 420ms linear;
+			}
+
+			#active_btn{
+				border: .42em gold solid;
+			}
+
+		}
+	}
+
 }
 
 .desc1, .desc3{
 	background: linear-gradient(45deg, #000, rgba(100, 67, 102, 0.57), #000);
 }
+.desc1{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.info_wheel-container{
+		background: gold;
+		width: 90%;
+		height: 80%;
+		border-radius: 100%;
+		overflow: hidden;
+		transform-origin: center;
+		animation: rotateWheel infinite 2000ms linear;
+		animation-play-state: paused;
+
+
+		.info_wheel-bar{
+			width: 98%;
+			height: 100px;
+			background: #eee;
+			border: .13em #000 solid;
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			
+
+		}
+		.bar1{
+			transform: rotate(30deg);
+			transform: translate(-50% -50%);
+			transform-origin: center;
+			top: 39%;
+			left: 1.42%;
+			.bar2{
+				transform: rotate(59deg);
+			}
+		}
+
+	}
+	.info_wheel-container:hover{
+		animation-play-state: paused;
+	}
+}
+
 .desc2{
 	background: linear-gradient(-45deg, #eee, rgba(100, 67, 102, 0.57), #999);
 }
@@ -167,14 +294,12 @@ body {
 	width: 96.5vw;
 	height: 60vh;
 	background-size: 400% 400%;
-	// animation: infiniteGradient 13s ease both infinite;
+	animation: infiniteGradient 13s ease both infinite;
 	color: #eee;
 	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-.hero_landing{
-	color: #eee;
-	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-}
+
+
 
 .footer{
 	width: 96.5vw;
@@ -191,7 +316,6 @@ body {
 
 
 
-
 @keyframes infiniteGradient{
 	0% {
 		background-position: 0% 50%;
@@ -204,5 +328,14 @@ body {
 	}
 	100%{
 		background-position: 0% 50%;
+	}
+}
+
+@keyframes rotateWheel{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
 	}
 }
